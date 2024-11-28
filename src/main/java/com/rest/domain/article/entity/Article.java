@@ -1,11 +1,21 @@
 package com.rest.domain.article.entity;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
+import com.rest.global.jpa.BaseEntity;
+import jakarta.persistence.Entity;
+import lombok.*;
+import lombok.experimental.SuperBuilder;
+import org.springframework.security.web.authentication.www.BasicAuthenticationEntryPoint;
 
 @Getter
+@Setter
 @AllArgsConstructor
-public class Article {
+@Entity
+@NoArgsConstructor
+@ToString(callSuper = true)
+@SuperBuilder
+public class Article  extends BaseEntity {
 
-    private  Long id;
+
+    private  String subject;
+    private  String content;
 }
